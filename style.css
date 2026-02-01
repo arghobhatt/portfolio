@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: #000000;
   color: #ffffff;
@@ -24,6 +28,11 @@ body {
   justify-content: space-between;
   align-items: center;
   border: 1px solid #333;
+  position: sticky;
+  top: 20px;
+  z-index: 1000;
+  backdrop-filter: blur(10px);
+  background-color: rgba(26, 26, 26, 0.9);
 }
 
 .my-name {
@@ -86,14 +95,11 @@ body {
   color: #fff;
   margin-bottom: 10px;
   line-height: 1.2;
-
   display: inline-block;
   overflow: hidden;
   white-space: nowrap;
   width: 0;
-
   border-right: 4px solid #a78bfa;
-
   animation: typing 2.5s steps(30) forwards;
 }
 
@@ -120,10 +126,8 @@ body {
   font-size: 0.8rem;
   font-weight: bold;
   margin-bottom: 20px;
-
   opacity: 0;
   transform: translateY(10px);
-
   animation: fade-in 0.5s ease-out forwards;
   animation-delay: 2.5s;
 }
@@ -156,6 +160,9 @@ body {
   border-radius: 15px;
   margin-right: 10px;
   font-size: 0.9rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .my-photo {
@@ -195,6 +202,7 @@ body {
   text-align: center;
   border: none;
   background: transparent;
+  scroll-margin-top: 100px;
 }
 
 .work-item {
@@ -240,4 +248,117 @@ footer {
   text-align: center;
   padding: 50px;
   color: #444;
+}
+
+.info-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  width: 100%;
+  scroll-margin-top: 100px;
+}
+
+.skillset-part,
+.education-part {
+  width: 100%;
+}
+
+.skill-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.skill-tag {
+  background-color: #222;
+  color: #ccc;
+  border: 1px solid #333;
+  padding: 10px 20px;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: 0.2s;
+  cursor: default;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.skill-tag i {
+  font-size: 1.2rem;
+  transition: 0.2s;
+}
+
+.skill-tag:hover {
+  background-color: #a78bfa;
+  color: #000;
+  border-color: #a78bfa;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(167, 139, 250, 0.2);
+}
+
+.skill-tag:hover i {
+  color: #000;
+}
+
+.edu-list {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  margin-top: 20px;
+}
+
+.edu-item {
+  border-left: 2px solid #333;
+  padding-left: 20px;
+  position: relative;
+}
+
+.edu-item::before {
+  content: "";
+  position: absolute;
+  left: -6px;
+  top: 5px;
+  width: 10px;
+  height: 10px;
+  background-color: #a78bfa;
+  border-radius: 50%;
+}
+
+.edu-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 5px;
+}
+
+.edu-header h3 {
+  font-size: 1.1rem;
+  margin: 0;
+  color: #fff;
+}
+
+.year-badge {
+  background-color: #1a1a1a;
+  border: 1px solid #333;
+  padding: 4px 10px;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  color: #888;
+}
+
+.institution {
+  color: #a78bfa;
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin-bottom: 8px;
+}
+
+.coursework {
+  color: #666;
+  font-size: 0.85rem;
+  line-height: 1.5;
 }
